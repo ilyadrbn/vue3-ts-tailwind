@@ -5,6 +5,12 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     {
+      // not found
+      path: '/:pathMatch(.*)*',
+      component: () => import('@/pages/404Page.vue'),
+      name: '404'
+    },
+    {
       path: '/',
       component: HomePage,
       name: 'Home'
