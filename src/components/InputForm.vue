@@ -1,5 +1,8 @@
 <template>
-  <form @submit.prevent class="mb-4">
+  <form
+    @submit.prevent
+    class="mb-4"
+  >
     <div
       class="input-form mb-4 mt-4 flex w-full flex-col gap-4 rounded border border-gray-300 bg-white p-4 shadow"
     >

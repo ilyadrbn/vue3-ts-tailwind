@@ -1,6 +1,10 @@
 <template>
   <InputForm @add-post="addPostToList" />
-  <PostTable v-if="PostList.length" :post-list="PostList" @delete-post="deletePostFromList" />
+  <PostTable
+    v-if="PostList.length"
+    :post-list="PostList"
+    @delete-post="deletePostFromList"
+  />
 </template>
 <script lang="ts" setup>
 import InputForm from '@/components/InputForm.vue'
@@ -16,7 +20,11 @@ interface Post {
 const PostList = ref<Post[]>([])
 
 const addPostToList = (value: string[]) => {
-  PostList.value.push({ id: PostList.value.length + 1, title: value[0], description: value[1] })
+  PostList.value.push({
+    id: PostList.value.length + 1,
+    title: value[0],
+    description: value[1]
+  })
 }
 const deletePostFromList = (id: number) => {
   PostList.value = PostList.value.filter((post) => post.id !== id)
